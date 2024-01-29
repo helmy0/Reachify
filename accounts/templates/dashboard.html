@@ -15,8 +15,20 @@
                 <tr>
                     <th></th>
                     <th>Customer</th>
-                    <th>Orders</th>
+                    <th>Phone</th>
                 </tr>
+                    
+                {% for customer in customers%}
+                    <tr>
+                        <th><a class="btn btn-sm btn-info" href="{% url 'customer' customer.id %}">View</th>
+                        <th>{{customer.name}}</th>
+                        <th>{{customer.phone}}</th>
+                        <th></th>
+                    </tr>      
+                
+                {%endfor%}
+                
+       
             </table>
         </div>
     </div>
@@ -34,6 +46,28 @@
                     <th>Update</th>
                     <th>Remove</th>
                 </tr>
+
+
+                    
+                {% for order in orders%}
+                    <tr>
+                       
+                        <th>{{order.product.name}}</th>
+                        <th>{{order.data_created}}</th>
+                        <th>{{order.status}}</th>
+                        <th><button type="button" class="btn btn-success">Update</button></th>
+                        <th><button type="button" class="btn btn-danger">Remove</button></th>
+
+                     
+                        
+
+
+                        <th></th>
+                    </tr>      
+                
+                {%endfor%}
+                
+
             </table>
         </div>
     </div>

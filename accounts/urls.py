@@ -4,8 +4,8 @@ from . import views
 
 urlpatterns = [
 
-    path("", views.index),
-    path("products/", views.products),
-    path("customer/<str:pk>/", views.customer), # <str:pk> is used to pass in the user ID and forwads it to .views.
+    path("", views.index, name='home'),
+    path("products/", views.products, name='products'),
+    path("customer/<str:pk>/", views.customer, name='customer'), # <str:pk> is used to pass in the user ID and forwads it to .views.
     
 ]

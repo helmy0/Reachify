@@ -24,6 +24,7 @@ def index(request):
     return render(request,'dashboard.html', context)
 
 def products(request):
+    
     products = Product.objects.all()
     
     return render(request,'products.html', {'products':products})
