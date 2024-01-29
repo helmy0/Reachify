@@ -1,7 +1,5 @@
 
-ChatGPT
-markdown
-Copy code
+
 # Reachify CRM
 
 Reachify is a powerful Customer Relationship Management (CRM) web application built with Django. It's designed to streamline the process of managing customer interactions and data, empowering businesses to efficiently handle their relationships with clients.
