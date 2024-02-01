@@ -45,7 +45,7 @@ class Order(models.Model):
     
     STATUS = (
         ('Pending', 'Pending'),
-        ('Out for deliver', 'Out for deliver'),
+        ('Out for delivery', 'Out for delivery'),
         ('Delivered','Delivered')
     )
     
@@ -56,4 +56,4 @@ class Order(models.Model):
     
     
     def __str__(self):
-        return self.customer.name + "'s Order"
+        return self.product.name
