@@ -1,3 +1,5 @@
+
+
 {% extends "main.html" %}
 
 {% block content %}
@@ -6,7 +8,15 @@
 
 <form action="" method = "POST">
     {% csrf_token %}
-    {{form}}
+    {% if formset %}
+        {{ formset.management_form }}
+        {% for form in formset %}
+            {{form}}
+            <hr>
+        {% endfor %}
+    {% else %}
+        {{ form.as_p }}
+    {% endif %}
     <input type='submit' name='Submit'>
 </form>
 
