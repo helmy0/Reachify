@@ -41,6 +41,8 @@
                 <tr>
                     <th>Product</th>
                     <th>Date Ordered</th>
+                    <th>Note</th>
+
                     <th>Status</th>
                     <th>Update</th>
                     <th>Remove</th>
@@ -50,9 +52,10 @@
                     
                 {% for order in orders%}
                     <tr>
-                       
+                        
                         <th>{{order.product.name}}</th>
                         <th>{{order.data_created}}</th>
+                        <th>{{order.note}}</th>
                         <th>{{order.status}}</th>
                         <th><button type="button" class="btn btn-success"><a href = "{% url 'update_order' order.id %}">Update</button></th>
                         <th><button type="button" class="btn btn-danger"><a href = "{% url 'delete_order' order.id %}">Remove</button></th>
