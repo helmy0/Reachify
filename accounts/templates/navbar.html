@@ -15,4 +15,7 @@
         </li>
       </ul>
     </div>
+
+    <span style="color: white; margin-right: 10px;">Hello, {{request.user}}</span>
+    <span style="margin-left: 10px;"><a href="{% url 'logout' %}">Logout</a></span>
   </nav>

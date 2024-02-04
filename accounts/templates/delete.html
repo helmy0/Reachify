@@ -4,7 +4,7 @@
 {% block content %}
 {% include "navbar.html" %}
 
-<p>Are you sure you want to delete "{{items}}" ?</p>
+<p>Are you sure you want to delete item: {{item}} ?</p>
 
 <form action="{% url 'delete_order' item.id %}" method ="POST">
     {% csrf_token %}
