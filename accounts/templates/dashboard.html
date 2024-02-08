@@ -1,9 +1,19 @@
+
+
 {% extends "main.html" %}
+{% load static %}
+{% block favicon %}
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'imgs/network-16px.png' %}" />
+{% endblock %}
+    
+
 
 {% block content%}
 
 {% include "navbar.html" %}
 {%include "status.html"%}
+
+
 <hr>
 <div class="row">
     <div class="col-md-5 ">
