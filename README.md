@@ -10,7 +10,7 @@ Reachify is a powerful Customer Relationship Management (CRM) web application bu
 - **Product Inventory**: Keep track of your product inventory, including stock levels and availability.
 - **Order Status**: Monitor and update order statuses to ensure smooth transactions and customer satisfaction.
 - **Authentication & Authorization**: Customers access their personalized dashboard showcasing their respective order models. Meanwhile, administrators have an overarching dashboard providing an overview of all orders.
-- 
+  
 ## Technologies Used
 
 - **Django**: A high-level Python web framework for rapid development and clean, pragmatic design.
