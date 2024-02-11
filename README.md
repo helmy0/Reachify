@@ -1,4 +1,6 @@
-
+<p align="center">
+  <img src="static/imgs/network.png" width="400" alt="Reachify CRM Logo">
+</p>
 
 # Reachify CRM
 
