@@ -29,7 +29,6 @@ def registerPage(request):
 
             
 
-
             messages.success(request, "Account was created for "+ username )
             return redirect('login')
         

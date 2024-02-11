@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     "django_filters",
     "accounts.apps.AccountsConfig",
-    
+    "storages",
     
     
     "django.contrib.admin",
@@ -89,9 +89,9 @@ DATABASES = {
         'NAME':'demo_1',
         # to run on local postgres server'USER':'postgres',
         'USER':'omarfarrag',
-        'PASSWORD':'abc123abc',
+        'PASSWORD':'abc123abc', #To run on local postgres server'PASSWORD':'abc123abc',2
         #To run on local postgres server'HOST':'localhost',
-        'HOST':'database-1.cx04s8iwce24.eu-west-2.rds.amazonaws.com',
+        'HOST':'database-1.cx04s8iwce24.eu-west-2.rds.amazonaws.com', #AWS RDS
         'PORT':'5432',
     }
 }
@@ -149,3 +149,18 @@ MEDIA_URL = '/imgs/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+
+
+#S3 Buckets CONFIG
+AWS_ACCESS_KEY_ID = 'AKIAVGQZ26NDWQTNCZ5X'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'reachify-django'
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
