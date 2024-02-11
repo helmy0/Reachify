@@ -85,10 +85,13 @@ WSGI_APPLICATION = "CRM.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME":'DEMO_TEST',
-        'USER':'postgres',
+        #"NAME":'DEMO_TEST',
+        'NAME':'demo_1',
+        # to run on local postgres server'USER':'postgres',
+        'USER':'omarfarrag',
         'PASSWORD':'abc123abc',
-        'HOST':'localhost',
+        #To run on local postgres server'HOST':'localhost',
+        'HOST':'database-1.cx04s8iwce24.eu-west-2.rds.amazonaws.com',
         'PORT':'5432',
     }
 }
