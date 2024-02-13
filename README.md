@@ -18,7 +18,8 @@ Reachify is a powerful Customer Relationship Management (CRM) web application bu
 - **Django**: A high-level Python web framework for rapid development and clean, pragmatic design.
 - **HTML/CSS**: Standard languages for building the structure and styling of web pages.
 - **JavaScript**: Used for adding interactivity and dynamic features to the application.
-- **AWS RDS**: Soon to be implemented as the the projects database. 
+- **AWS RDS**: Connected django backend to AWS RDS PostgreSQL.
+- **AWS S3#**: Used S3 bucket to serve the static files (CSS & Imgs)
 
 
 ## Getting Started
