@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -78,23 +80,49 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "CRM.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        #"NAME":'DEMO_TEST',
-        'NAME':'demo_1',
-        # to run on local postgres server'USER':'postgres',
-        'USER':'omarfarrag',
-        'PASSWORD':'abc123abc', #To run on local postgres server'PASSWORD':'abc123abc',2
-        #To run on local postgres server'HOST':'localhost',
-        'HOST':'database-1.cx04s8iwce24.eu-west-2.rds.amazonaws.com', #AWS RDS
-        'PORT':'5432',
+USE_POSTGRESQL_DB=True
+USE_AWS_RDS = False
+
+if USE_POSTGRESQL_DB:
+    if USE_AWS_RDS:
+
+        DATABASES = {
+            "default": {
+                "ENGINE": "django.db.backends.postgresql",
+                "NAME": "demo_1",
+                "USER": os.getenv("AWS_USER"),
+                "PASSWORD": os.getenv("AWS_PASS"),
+                "HOST": os.getenv("AWS_HOST_ENDPOINT"),
+                "PORT": "5432",
+            }
+
+        
+        }
+    else:
+
+        DATABASES = {
+            "default": {
+                "ENGINE": "django.db.backends.postgresql",
+                "NAME": "DEMO_TEST",
+                "USER": "postgres",
+                "PASSWORD": os.getenv("LOCAL_HOST_PASS"),
+                "HOST": "localhost",
+                "PORT": "5432",
+            }
+        }
+
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
     }
-}
+
+    
 
 
 # Password validation
@@ -130,6 +158,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
+
+
 
 STATIC_URL = '/static/'
 
