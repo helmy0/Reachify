@@ -10,7 +10,7 @@ class Customer(models.Model):
     name = models.CharField(max_length=200, null=True)
     phone = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200, null=True)
-    profile_pic = models.ImageField(default='defaultProfile.png',null=True, blank=True)
+    profile_pic = models.ImageField(default='imgs/defaultProfile.png',null=True, blank=True)
     data_created = models.DateTimeField(auto_now_add=True, null=True) # Allows us to create the date and time when an instance of this class is created in the database.
     
     def __str__(self):
