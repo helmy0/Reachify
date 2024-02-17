@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+from accounts import keys
+
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -161,8 +163,8 @@ USE_TZ = True
 USE_S3 = True
 
 if USE_S3:
-    AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
-    AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET")
+    AWS_ACCESS_KEY_ID = keys.AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY = keys.AWS_SECRET_ACCESS_KEY
     AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
     AWS_S3_REGION_NAME = os.getenv("AWS_LOCATION")
 
@@ -174,8 +176,8 @@ if USE_S3:
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/'
-
 else:
+
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATIC_URL = '/static/'
 
